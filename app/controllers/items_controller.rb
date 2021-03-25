@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.measurements.build
+    @item.supplies.build
   end
 
   def create
@@ -57,7 +57,7 @@ class ItemsController < ApplicationController
   private
 
     def item_params
-      params.require(:item).permit(:name, measurements_attributes: [:unit, :quantity])
+      params.require(:item).permit(:name, supplies_attributes: [:unit, :quantity])
     end
 
     def set_item
