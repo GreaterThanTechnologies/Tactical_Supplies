@@ -29,13 +29,6 @@ class SuppliesController < ApplicationController
     end
     @supply.save
     redirect_to items_path
-    # if @supply.save
-    #     redirect_to item_path(@item)
-    # else
-    #   # redirect_to new_item_path
-    #   @errors = @item.errors.full_messages
-    #   render :new
-    # end
   end
 
 
