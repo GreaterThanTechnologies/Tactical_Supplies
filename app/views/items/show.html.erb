@@ -1,0 +1,12 @@
+<h1><%=@item.name%></h1>
+<%=render partial: 'supplies/supplies', locals: {supplies: @item.supplies, index: false}%><br>
+
+
+<%=link_to "Add Item to Pantry", new_item_supply_path(@item) %><br><br>
+
+
+<%=link_to "Edit",  edit_item_path(@item)%><br><br>
+
+
+
+<%=button_to("Delete", @item, method: :delete, data: { confirm: "Really?" }) %>
