@@ -27,7 +27,6 @@ class ItemsController < ApplicationController
     if @item.save
         redirect_to item_path(@item)
     else
-      # redirect_to new_item_path
       @errors = @item.errors.full_messages
       render :new
     end

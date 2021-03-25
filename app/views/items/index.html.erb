@@ -1,4 +1,10 @@
-<h1>All Items</h1>
-<%@items.each do |item|%>
+<div class="parent">
+    <div class="div1">
+        <h1 class="center big"><%= current_owner.username %></h1>
+    </div>
+
+
+
+ <%@items.each do |item|%>
   <li><%=link_to(item.name, item_path(item))%></li>
 <%end%>

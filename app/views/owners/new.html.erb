@@ -1,12 +1,16 @@
-<h1><%=@item.name%></h1>
-<%=render partial: 'supplies/supplies', locals: {supllies: @item.supplies, index: false}%><br>
+<div class="parent">
+    <div class="div1">
+        <h1 class="center big">Sign Up</h1>
+    </div>
 
+<% @errors && @errors.each do |e| %>
+  <li><%=e%></li>
+<%end%>
 
-<%=link_to "Add Item to Your Store", new_item_supply_path(@item) %><br><br>
-
-
-<%=link_to "Edit",  edit_item_path(@item)%><br><br>
-
-
-
-<%=button_to("Delete", @item, method: :delete, data: { confirm: "Really?" }) %>
+<%= form_for @owner, url: signup_path do |f| %>
+  <div class="div2 buttonDiv"><%=f.label "Username"%><%=f.text_field :username%></div>
+  <div class="div2 buttonDiv"><%=f.label "Password"%><%=f.password_field :password %></div>
+  <div class="div2 buttonDiv"><%=f.label "Password Confirmation"%><%=f.password_field :password_confirmation %></div>
+  <div class="div2 buttonDiv"><%=f.submit "Sign Up"%></div>
+<%end%>
+</div>

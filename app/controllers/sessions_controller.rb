@@ -19,13 +19,17 @@ class SessionsController < ApplicationController
 
 
   def create_with_fb
-    owner = Owner.find_or_create_by(username: fb_auth['info']['email']) do |u|
+    
+    @owner = Owner.find_or_create_by(username: fb_auth['info']['name']) do |u|
       u.password = 'password'
     end
-    if owner.save
-      session[:owner_id] = owner.id
-      redirect_to owner_items_path(owner)
+    if @owner.save
+      
+      session[:owner_id] = @owner.id
+      
+      redirect_to owner_items_path(@owner)
     else
+      
       redirect_to signup_path
     end
   end
@@ -38,7 +42,8 @@ class SessionsController < ApplicationController
   private
 
   def fb_auth
-     self.request.env['omniauth.auth']
+    
+     request.env['omniauth.auth']
   end
 
 
