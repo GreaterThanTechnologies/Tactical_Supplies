@@ -4,6 +4,10 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore FaceBook Auth Information
+/face_book_notes_for_omniauth
+.env
+
 # Ignore bundler config.
 /.bundle
 

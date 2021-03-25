@@ -23,7 +23,7 @@ class SuppliesController < ApplicationController
 
   def create
     @supply = Supply.create(supply_params)
-    @supply.user = current_user
+    @supply.owner = current_owner
     if params[:item_id]
       @supply.item_id = params[:item_id]
     end
@@ -36,6 +36,6 @@ class SuppliesController < ApplicationController
   private
 
   def supply_params
-    params.require(:measurement).permit(:quantity, :unit, :item_id)
+    params.require(:supply).permit(:quantity, :unit, :item_id)
   end
 end
