@@ -8,9 +8,9 @@
 <%end%>
 
 <%= form_for @owner, url: signup_path do |f| %>
-  <div class="div2 buttonDiv"><%=f.label "Username"%><%=f.text_field :username%></div>
-  <div class="div2 buttonDiv"><%=f.label "Password"%><%=f.password_field :password %></div>
+  <div class="div4 buttonDiv"><%=f.label "Username"%><%=f.text_field :username%></div>
+  <div class="div3 buttonDiv"><%=f.label "Password"%><%=f.password_field :password %></div>
   <div class="div2 buttonDiv"><%=f.label "Password Confirmation"%><%=f.password_field :password_confirmation %></div>
-  <div class="div2 buttonDiv"><%=f.submit "Sign Up"%></div>
+  <div class="div1 buttonDiv"><%=f.submit "Sign Up"%></div>
 <%end%>
 </div>

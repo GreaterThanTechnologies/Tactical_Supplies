@@ -14,9 +14,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-
   end
-
+  
   def new
     @item = Item.new
     @item.supplies.build
@@ -24,6 +23,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    binding.pry
     if @item.save
         redirect_to item_path(@item)
     else
@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
   private
 
     def item_params
-      params.require(:item).permit(:name, supplies_attributes: [:unit, :quantity])
+      params.require(:item).permit(:name, supplies_attributes: [:unit, :quantity, :owner_id])
     end
 
     def set_item

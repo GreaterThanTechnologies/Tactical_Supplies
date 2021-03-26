@@ -4,15 +4,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-     @owner = Owner.find_by(username: params[:owner][:username])
+    binding.pry
+    @owner = Owner.find_by(username: params[:owner][:username])
     if  @owner &&  @owner.authenticate(params[:owner][:password])
+      binding.pry
       session[:owner_id] =  @owner.id
-      redirect_to owner_items_path( @owner)
+      binding.pry
+      redirect_to owner_items_path(@owner)
     elsif  @owner
       @errors = ["Invalid Password"]
       render :new
     else
-      @errors = ["Invalid Username"]
+      @errors = ["Invalid Username &/or Password"]
       render :new
     end
   end
