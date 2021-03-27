@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_03_25_185705) do
 
   create_table "owners", force: :cascade do |t|
     t.string "name"
-    t.string "ownername"
+    t.string "username"
     t.string "company_name"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false

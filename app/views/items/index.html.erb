@@ -1,12 +1,13 @@
 Good day, <%= current_owner.username %>!</h2>
  
   
-            <h5>Below is YOUR Tactical Supply. What would you like to do?</h5><br/><br/>
+<h5>Below is YOUR Tactical Supply. What would you like to do?</h5>
 <%= link_to "Add Items", new_item_path %>
-<%= link_to "Edit Supply", signup_path %>
 
 
  <%@items.each do |item|%>
-  <li><%=link_to(item.name, item_path(item))%></li>
+  <li><%=link_to(item.name, item_path(item))%>
+  </li>
+
 <%end%>
  

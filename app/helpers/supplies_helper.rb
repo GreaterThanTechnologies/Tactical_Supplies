@@ -5,7 +5,8 @@ module SuppliesHelper
   end
 
   def form_url_helper(item)
-    item ? item_supplies_path(item) : item_supplies_path
+    item ? item_supplies_path(item) : login_path
   end
-  
+
+
 end

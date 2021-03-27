@@ -10,6 +10,20 @@
   </head>
 
   <body>
+ <%if current_owner %>
+    <%=link_to "All Items", items_path %>
+    <%=link_to "New Item", new_item_path %>
+    <%=link_to "New Supply", new_supply_path %>
+    <%=link_to "All Supplies", supplies_path %>
+    <%=link_to "My Items", owner_items_path(current_owner) %>
+    <%= button_to "Log Out", logout_path, method: :post %>
+  <%else%>
+    <%= link_to "Log In", login_path %>
+    <%= link_to "Sign Up", signup_path %>
+    <%=link_to "Sign Up With Facebook", '/auth/facebook'%>
+  <%end%>
+
+
    <%= yield %>
   </body>
 </html>

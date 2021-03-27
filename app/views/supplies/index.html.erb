@@ -1,7 +1,7 @@
-<h1>Search By Quantity</h1>
-
+<h1>Search By Quantity from all Tactical Suppliers</h1>
+<br/><br/>
 <%= form_tag supplies_path, method: :get do %>
   <%=text_field_tag :quantity %>
   <%=submit_tag "Search"%>
-<%end%>
-<%=render(partial: 'supplies', locals: {supplies: @supplies, index: true})%>
+<%end%><br/><br/>
+ <%=render(partial: 'supplies', locals: {supplies: @supplies, index: true})%>

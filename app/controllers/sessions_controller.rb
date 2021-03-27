@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @owner = Owner.find_by(username: params[:owner][:username])
+    
+     @owner = Owner.find_by(username: params[:owner][:username])
     if  @owner &&  @owner.authenticate(params[:owner][:password])
       session[:owner_id] =  @owner.id
       redirect_to owner_items_path(@owner)
