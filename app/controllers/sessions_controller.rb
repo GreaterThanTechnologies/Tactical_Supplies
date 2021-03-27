@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
      @owner = Owner.find_by(username: params[:owner][:username])
-    if  @owner &&  @owner.authenticate(params[:owner][:password])
+      if  @owner &&  @owner.authenticate(params[:owner][:password])
       session[:owner_id] =  @owner.id
+
       redirect_to owner_items_path(@owner)
     elsif  @owner
       @errors = ["Invalid Password"]
@@ -21,7 +21,9 @@ class SessionsController < ApplicationController
   def create_with_fb
     @owner = Owner.find_or_create_by(username: fb_auth['info']['name']) do |p|
       params.password = 'password'
-      
+      @owner.name = auth["info"]["name"]
+      binding.pry
+
     end
     if @owner.save
       session[:owner_id] = @owner.id
@@ -33,7 +35,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    redirect_to '/signup'
+    redirect_to root_path
   end
 
 ####
