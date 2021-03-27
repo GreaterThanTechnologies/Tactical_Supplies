@@ -1,17 +1,9 @@
-<div class="parent">
-    <div class="div1">
-        <h2 class="center big">Good day, <%= current_owner.username %>!</h2>
+Good day, <%= current_owner.username %>!</h2>
  
-   <body>
-    <div class="center">
-      <div class="justify">
-            <h5>Below is YOUR Tactical Supply. What would you like to do?</h5></div><br/><br/>
-          
-  <div class="parent">
-    <div class="div1">
-     </div>
-    <div class="div2 buttonDiv"><%= link_to "Add Items", new_item_path %></div>
-    <div class="div4 buttonDiv"><%= link_to "Edit Supply", signup_path %></div>
+  
+            <h5>Below is YOUR Tactical Supply. What would you like to do?</h5><br/><br/>
+<%= link_to "Add Items", new_item_path %>
+<%= link_to "Edit Supply", signup_path %>
 
 
  <%@items.each do |item|%>
