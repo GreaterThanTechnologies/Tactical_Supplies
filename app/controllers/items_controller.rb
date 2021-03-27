@@ -22,12 +22,15 @@ class ItemsController < ApplicationController
   end
 
   def create
+
     @item = Item.new(item_params)
-    binding.pry
+
     if @item.save
         redirect_to item_path(@item)
     else
+
       @errors = @item.errors.full_messages
+
       render :new
     end
   end
@@ -52,7 +55,7 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
-
+####
   private
 
     def item_params

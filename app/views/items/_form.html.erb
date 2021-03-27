@@ -2,12 +2,12 @@
   <%=f.label("Item Name:") %><br/>
   <%=f.text_field(:name) %><br/><br/>
   <h4><%=f.label("How Much Do You Want to Add?") %><br/></h4>
-          <%=f.fields_for :supplies do |m| %> 
-                <%=m.label "Quantity:"%><br/>
-                <%=m.number_field :quantity%><br/><br/>
-                <%=m.label "Unit:"%><br/>
-                <%=m.text_field  :unit %><br/><br/>
-                <% m.hidden_field%>
-            <%end%>
+    <%=f.fields_for :supplies do |m| %> 
+      <%=m.label "Quantity:"%><br/>
+      <%=m.number_field :quantity%><br/><br/>
+      <%=m.label "Unit:"%><br/>
+      <%=m.text_field  :unit %><br/><br>
+      <%=m.hidden_field :owner_id, value: current_owner.id %>
+    <%end%>
   <%=f.submit "Submit"%>
 <%end%>
