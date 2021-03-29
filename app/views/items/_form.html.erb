@@ -1,6 +1,6 @@
 <%=form_for(@item) do |f|%>
-  <%=f.label("Item Name:") %><br/>
-  <%=f.text_field(:name) %><br/><br/>
+  <%=f.label("Select Item:") %><br/>
+   <%=f.collection_select :id, Item.all, :id, :name %> <br/><br/>
   <h4><%=f.label("How Much Do You Want to Add?") %><br/></h4>
     <%=f.fields_for :supplies do |m| %> 
       <%=m.label "Quantity:"%><br/>
@@ -11,3 +11,9 @@
     <%end%>
   <%=f.submit "Submit"%>
 <%end%>
+
+
+
+
+
+f.collection_select :score_id, Score.all, :id, :name
