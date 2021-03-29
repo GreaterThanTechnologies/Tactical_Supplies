@@ -1,0 +1,5 @@
+REGEX VALIDATIONS
+
+^[a-z0-9]*$ 
+lowercase no spaces for username
+
