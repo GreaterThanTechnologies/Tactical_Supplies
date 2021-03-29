@@ -9,6 +9,10 @@ class SuppliesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   def new
     if params[:item_id]
       @item = Item.find_by(id: params[:item_id])

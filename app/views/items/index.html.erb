@@ -1,4 +1,8 @@
-Good day, <%= current_owner.username %>!</h2>
+<% if !current_owner.fname%>
+<h2><Good day, <%= current_owner.fname %>!></h2>
+<% else %>
+<h2><Good day, <%= current_owner.username %>!></h2>
+<%end%>
  
   
 <h5>Below is YOUR Tactical Supply. What would you like to do?</h5>

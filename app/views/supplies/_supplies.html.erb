@@ -1,4 +1,3 @@
 <%supplies.each do |m|%>
- <li><b><%=m.quantity%> <%=m.unit%></b> of <%=show_item_name(m, index)%><br/>
-
+ <li><b><%=m.quantity%> <%=m.unit%></b><%=show_item_name(m, index)%><br/>
  <%end%>
