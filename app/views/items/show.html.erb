@@ -1,12 +1,9 @@
 <h1><%=@item.name%></h1>
+ 
 <%=render partial: 'supplies/supplies', locals: {supplies: @item.supplies, index: false}%><br>
 
 
 <%=link_to "Edit / Change Your Supply", edit_item_path(@item) %><br><br>
-
-
-<%=link_to "Edit",  edit_item_path(@item)%><br><br>
-
 
 
 <%=button_to("Delete", @item, method: :delete, data: { confirm: "Are You Positve You Want to Delete Item?" }) %>

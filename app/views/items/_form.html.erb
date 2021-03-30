@@ -9,11 +9,10 @@
       <%=m.text_field  :unit %><br/><br>
       <%=m.hidden_field :owner_id, value: current_owner.id %>
     <%end%>
-  <%=f.submit "Submit"%>
+  <%=f.submit "Save Into My Supplies"%>
 <%end%>
 
 
 
 
 
-f.collection_select :score_id, Score.all, :id, :name

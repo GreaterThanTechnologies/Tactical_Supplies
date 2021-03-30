@@ -1,4 +1,5 @@
 class OwnersController < ApplicationController
+  before_action(:req_login, except: [:new, :create])
 
   def new
     @owner = Owner.new

@@ -1,4 +1,5 @@
 class SuppliesController < ApplicationController
+  before_action(:req_login)
   layout "application"
 
   def index
@@ -10,7 +11,6 @@ class SuppliesController < ApplicationController
   end
 
   def edit
-
   end
 
   def new
@@ -31,8 +31,12 @@ class SuppliesController < ApplicationController
     if params[:item_id]
       @supply.item_id = params[:item_id]
     end
-    @supply.save
-    redirect_to items_path
+    if @supply.save
+      redirect_to items_path
+    else
+      @items = Items.all
+      render :new
+    end
   end
 
 
@@ -40,6 +44,6 @@ class SuppliesController < ApplicationController
   private
 
   def supply_params
-    params.require(:supply).permit(:quantity, :unit, :item_id)
+    params.require(:supply).permit(:quantity, :unit, :item_id, :name)
   end
 end
